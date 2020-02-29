@@ -14,4 +14,4 @@
 
 ## Basic usage:
 
-See scenes examples
+See example scenes
