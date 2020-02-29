@@ -9,8 +9,9 @@
 ## Sources
 [https://github.com/kevincastejon/cs-timer-event-for-unity](https://github.com/kevincastejon/cs-timer-event-for-unity)
 
-## Documentation
+## Documentation (nearly same as non-Unity version)
 [https://github.com/kevincastejon/cs-timer-event-for-unity/tree/master/Documentation/html](https://github.com/kevincastejon/cs-timer-event-for-unity/tree/master/Documentation/html)
+! Except for the Start() method that conflicts with MonoBehaviour own Start() method, use Begin() instead !
 
 ## Basic usage:
 
