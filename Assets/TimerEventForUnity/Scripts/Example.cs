@@ -15,11 +15,11 @@ namespace TimerEventExample
 
         public void OnTime(TimerEvent e)
         {
-            Debug.Log(e.Name + " event has been dispatched");
+            Debug.Log(e.Name + " event has been dispatched by "+e.Target);
         }
         public void OnComplete(TimerEvent e)
         {
-            Debug.Log(e.Name + " event has been dispatched");
+            Debug.Log(e.Name + " event has been dispatched by " + e.Target);
         }
 
         // Update is called once per frame

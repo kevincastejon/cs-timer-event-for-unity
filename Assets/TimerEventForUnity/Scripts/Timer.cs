@@ -21,6 +21,7 @@ namespace kevincastejon.unity
         void Start()
         {
             t = new _Timer(Duration, NumberOfRepeat);
+            t.DefaultTarget = this;
             t.On<TimerEvent>(TimerEvent.Names.TIMER.ToString(), (TimerEvent e) =>
             {
                 OnTimer?.Invoke(e);

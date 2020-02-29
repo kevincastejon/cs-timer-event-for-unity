@@ -103,6 +103,7 @@ namespace kevincastejon
         private List<object> listenersCallBack = new List<object>();
         private List<string> listenersType = new List<string>();
         private static List<EventDispatcher> dispatchers = new List<EventDispatcher>();
+        private object defaultTarget = null;
         /// <summary>
         /// Alias convenience shortcut for AddEventListener<T> method
         /// </summary>
@@ -171,7 +172,7 @@ namespace kevincastejon
         /// <param name="evt">An Event or inherited object that will be pass as parameter to the callback methods registered to this event (depending on its name)</param>
         public void DispatchEvent(Event evt)
         {
-            DispatchTargetedEvent(evt, null);
+            DispatchTargetedEvent(evt, defaultTarget);
         }
         /// <summary>
         /// Removes all event listeners registered to the specified <paramref name="eventName"/>. If not provided or null, then all event listeners of all type will be removed on this instance.
@@ -204,6 +205,19 @@ namespace kevincastejon
             for (int i = 0; i < max; i++)
                 if (listenersType[i] == eventName.ToString()) return (true);
             return (false);
+        }
+        /// <summary>
+        /// Default target for dispatched events, if not specified the EventDispatcher instance is set as default target. Useful for encapsulation.
+        /// </summary>
+        public object DefaultTarget{
+            get
+            {
+                return (defaultTarget);
+            }
+            set
+            {
+                defaultTarget = value;
+            }
         }
         /// <summary>
         /// Utilitary static method for removing all event listeners of all type and names on all EventDispatcher's intances. You can specify a list of EventDispatcher's to be excluded from the removing
